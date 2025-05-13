@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    height: 60px;
+  }
+  
+  .header-img {
+    padding-left: 20px;
+  }
+  
+  .header-components {
+    display: flex;
+    height: 100%;
+  }
+  
+  .header-components a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 20px; 
+    color: #535151;
+    text-decoration: none;
+    font-size: clamp(14px, 2vw, 20px);
+    transition: background-color 0.3s;
+  }
+  
+  .header-components a:hover {
+    background-color: #4c0606;
+  }
+  

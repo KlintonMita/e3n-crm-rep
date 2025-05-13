@@ -1,0 +1,141 @@
+.main-body {
+  .dash-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    border-bottom: groove;
+    padding: 20px;
+
+    .time,
+    .weather,
+    .plan {
+      display: flex;
+      height: 130px;
+      align-items: center;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .day,
+    .weather-img,
+    .daily-plan {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      border-radius: 20px 0 0 20px;
+      background-color: #418bca;
+    }
+
+    .real-time,
+    .live-weather,
+    .hours-workers {
+      width: 70%;
+      border-radius: 0 20px 20px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 3px groove #006dca;
+      background-color: #f1f1f1;
+      box-shadow: 0px 6px 12px rgba(52, 152, 219, 0.3);
+    }
+  }
+
+  .termin {
+    border-bottom: groove;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+
+    .dates {
+      width: 70px;
+      height: 35px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-right: groove;
+      border-bottom: groove;
+      border-radius: 0px 0px 10px 0px;
+
+      h2 {
+        margin: 0;
+      }
+    }
+
+    .termin-details {
+      display: flex;
+      padding: 20px;
+      width: 310px;
+      border: groove;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border-color: #ffa50000;
+      background-color: #f7b05e;
+      align-items: center;
+    }
+  }
+}
+
+.present-title {
+  width: 70px;
+  height: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right: groove;
+  border-bottom: groove;
+  border-radius: 0px 0px 10px 0px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.present-person {
+  background: linear-gradient(to bottom, #418bca 40%, #f8f8f8 30%);
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  border: 1.6px groove;
+  border-radius: 20px;
+
+  .preson-img {
+    width: 100%;
+    height: 40%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .person-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    height: 90%;
+
+    h2 {
+      margin: 0;
+    }
+
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+.main-frame {
+  border: ridge;
+  margin: 10px;
+  border-radius: 20px;
+}
