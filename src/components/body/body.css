@@ -1,19 +1,31 @@
 .main-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background-color: #f8f9fa;
+
   .dash-details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    border-bottom: groove;
-    padding: 20px;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
     .time,
     .weather,
     .plan {
       display: flex;
-      height: 130px;
+      height: 8rem;
       align-items: center;
-      border-radius: 20px;
+      border-radius: 1rem;
       overflow: hidden;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
     }
 
     .day,
@@ -25,40 +37,129 @@
       justify-content: center;
       align-items: center;
       height: 100%;
-      border-radius: 20px 0 0 20px;
+      border-radius: 1rem 0 0 1rem;
       background-color: #418bca;
+      color: white;
+      font-weight: 600;
     }
 
     .real-time,
     .live-weather,
     .hours-workers {
       width: 70%;
-      border-radius: 0 20px 20px 0;
+      border-radius: 0 1rem 1rem 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border: 3px groove #006dca;
-      background-color: #f1f1f1;
-      box-shadow: 0px 6px 12px rgba(52, 152, 219, 0.3);
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(65, 139, 202, 0.2);
+      padding: 0.5rem;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+      }
+
+      h3 {
+        font-size: 1rem;
+        color: #666;
+      }
     }
   }
 
   .termin {
-    border-bottom: groove;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     flex-direction: column;
-    gap: 20px;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
     .dates {
+      width: fit-content;
+      padding: 0.5rem 1rem;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    .termin-details {
+      padding: 1rem;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 0.5rem;
+      background-color: #f7b05e;
+      color: white;
+      font-weight: 500;
+      margin-left: 0;
+      box-shadow: 0 2px 4px rgba(247, 176, 94, 0.3);
+    }
+  }
+
+  .present-title {
+    width: 70px;
+    height: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: 1.5px groove;
+    border-bottom: 1.5px groove;
+    border-radius: 0px 0px 10px 0px;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .present-person {
+    background: linear-gradient(to bottom, #418bca 40%, #f8f8f8 30%);
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border: 1.5px groove;
+    border-radius: 20px;
+
+    .person-img {
+      width: 100%;
+      height: 40%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+
+    .person-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 10px;
+      height: 90%;
+
+      h2 {
+        margin: 0;
+      }
+
+      h3 {
+        margin: 0;
+      }
+    }
+  }
+
+  .absent {
+    border-top: 1.5px groove;
+
+    .absent-title {
       width: 70px;
       height: 35px;
       padding-left: 20px;
       padding-right: 20px;
-      border-right: groove;
-      border-bottom: groove;
+      border-right: 1.5px groove;
+      border-bottom: 1.5px groove;
       border-radius: 0px 0px 10px 0px;
 
       h2 {
@@ -66,76 +167,168 @@
       }
     }
 
-    .termin-details {
+    .absent-person {
+      background: linear-gradient(to bottom, #418bca 40%, #f8f8f8 30%);
+      width: 250px;
+      height: 250px;
       display: flex;
-      padding: 20px;
-      width: 310px;
-      border: groove;
-      margin-left: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      border-color: #ffa50000;
-      background-color: #f7b05e;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      margin: 20px;
+      border: 1.5px groove;
+      border-radius: 20px;
+
+      .absent-img {
+        width: 100%;
+        height: 40%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+      }
+
+      .absent-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+        height: 90%;
+
+        h2 {
+          margin: 0;
+        }
+
+        h3 {
+          margin: 0;
+        }
+
+        .absent-reason {
+          height: 14px;
+          width: auto;
+          padding: 8px;
+          background-color: #418bca;
+          border-radius: 10px;
+          display: flex;
+          gap: 5px;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 10px;
+          }
+        }
+      }
     }
   }
 }
 
-.present-title {
-  width: 70px;
-  height: 35px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-right: groove;
-  border-bottom: groove;
-  border-radius: 0px 0px 10px 0px;
+.weather-img {
+  h3 {
+    scale: 2;
+  }
+}
 
+.real-time {
+  height: 120px;
+}
+
+.hours-workers {
+  height: 120px;
+}
+
+.live-weather {
+  gap: 15px;
+  height: 120px;
+  h3 {
+    margin: 0;
+  }
   h2 {
     margin: 0;
   }
+  p {
+    margin: 0;
+  }
+  small {
+    display: none;
+  }
 }
 
-.present-person {
-  background: linear-gradient(to bottom, #418bca 40%, #f8f8f8 30%);
-  width: 250px;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.absent-person-main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
   align-items: center;
-  margin: 20px;
-  border: 1.6px groove;
-  border-radius: 20px;
+}
 
-  .preson-img {
-    width: 100%;
-    height: 40%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
+@media (max-width: 1018px) {
+  .absent-person-main {
+    grid-template-columns: auto auto;
   }
+}
 
-  .person-details {
+@media (max-width: 768px) {
+  .main-body {
+    padding: 1rem;
+
+    .dash-details {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .termin {
+      .termin-details {
+        max-width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: 705px) {
+  .absent-person-main {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-body {
+    .dash-details {
+      .time,
+      .weather,
+      .plan {
+        flex-direction: column;
+        height: auto;
+
+        .day,
+        .weather-img,
+        .daily-plan {
+          width: 100%;
+          border-radius: 1rem 1rem 0 0;
+          padding: 1rem;
+        }
+
+        .real-time,
+        .live-weather,
+        .hours-workers {
+          width: 100%;
+          border-radius: 0 0 1rem 1rem;
+          padding: 1rem;
+        }
+      }
+    }
+
+    .present-person,
+    .absent-person {
+      width: 100%;
+      margin: 20px 0;
+    }
+  }
+}
+
+@media (max-width: 358px) {
+  .absent-person-main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 10px;
-    height: 90%;
-
-    h2 {
-      margin: 0;
-    }
-
-    h3 {
-      margin: 0;
-    }
   }
-}
-
-.main-frame {
-  border: ridge;
-  margin: 10px;
-  border-radius: 20px;
 }

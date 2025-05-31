@@ -1,33 +1,80 @@
 .header {
-    display: flex;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f8f8f8;
+  height: 60px;
+  width: 100%;
+  position: relative;
+}
+
+.header-img {
+  padding-left: 20px;
+}
+
+.header-img img {
+  width: 40px;
+}
+
+.header-components {
+  display: flex;
+  height: 100%;
+}
+
+.header-components a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 20px;
+  color: #535151;
+  text-decoration: none;
+  font-size: clamp(14px, 2vw, 20px);
+  transition: background-color 0.3s;
+}
+
+.header-components a:hover {
+  background-color: #418bca;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+@media (max-width: 1540px) {
+  .header {
     justify-content: space-between;
-    align-items: center;
-    background-color: #f8f8f8;
-    height: 60px;
   }
-  
-  .header-img {
-    padding-left: 20px;
+}
+
+@media (max-width: 720px) {
+  .menu-icon {
+    display: block;
   }
-  
+
   .header-components {
-    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    right: -250px;
+    width: 200px;
     height: 100%;
+    background-color: #f8f8f8;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
   }
-  
+
+  .header-components.sidenav-open {
+    right: 0;
+  }
+
   .header-components a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 0 20px; 
-    color: #535151;
-    text-decoration: none;
-    font-size: clamp(14px, 2vw, 20px);
-    transition: background-color 0.3s;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    height: auto;
+    justify-content: flex-start;
   }
-  
-  .header-components a:hover {
-    background-color: #4c0606;
-  }
-  
+}
